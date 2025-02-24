@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple Calculator</title>
+ 
+  <link rel="manifest" href="/manifest.json">
+
+<style>* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f3f3f3;
+  }
+  
+  .calculator {
+    width: 300px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+  }
+  
+  .display {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 10px;
+    border: none;
+    background-color: #f0f0f0;
+    font-size: 1.5rem;
+    text-align: right;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  button {
+    height: 50px;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .zero {
+    grid-column: span 2;
+  }</style>
+</head>
+<body>
+  <div class="calculator">
+    <input type="text" id="result" class="display" readonly />
+    <div class="buttons">
+  <button id="clear">C</button>
+  <button id="divide">/</button>
+  <button id="multiply">*</button>
+  <button id="del">DEL</button>
+
+  <button id="seven">7</button>
+  <button id="eight">8</button>
+  <button id="nine">9</button>
+  <button id="subtract">-</button>
+
+  <button id="four">4</button>
+  <button id="five">5</button>
+  <button id="six">6</button>
+  <button id="add">+</button>
+
+  <button id="one">1</button>
+  <button id="two">2</button>
+  <button id="three">3</button>
+  <button id="equals">=</button>
+
+  <button id="zero" class="zero">0</button>
+  <button id="decimal">.</button>
+</div>
+
+    
+  </div>
+  <script>seven.addEventListener('click',()=>{
+    result.value+=7
+  })
+  eight.addEventListener('click',()=>{
+    result.value+=8
+  })
+  nine.addEventListener('click', () => {
+   result.value+=9
+  })
+  
+  four.addEventListener('click',()=>{
+    result.value+=4
+  })
+  five.addEventListener('click',()=>{
+    result.value+=5
+  })
+  six.addEventListener('click', () => {
+   result.value+=6
+  })
+  one.addEventListener('click',()=>{
+    result.value+=1
+  })
+  two.addEventListener('click',()=>{
+    result.value+=2
+  })
+  three.addEventListener('click', () => {
+   result.value+=3
+  })
+  zero.addEventListener('click', () => {
+    result.value += 0
+  })
+  clear.addEventListener('click', () => {
+   result.value=''
+  })
+  divide.addEventListener('click', () => {
+    result.value += '/'
+  })
+  multiply.addEventListener('click', () => {
+    result.value += '*'
+  })
+  add.addEventListener('click', () => {
+    result.value += '+'
+  })
+  
+  subtract.addEventListener('click', () => {
+    result.value += '-'
+  })
+  decimal.addEventListener('click', () => {
+    result.value += '.'
+  })
+  del.addEventListener('click', () => {
+    result.value= result.value.slice(0,-1)
+  })
+  
+  equals.addEventListener('click', () => {
+    try {
+      
+    var p= eval(result.value)
+    
+   if (!result.value && result.value !== Number) {
+    result.value=''
+  } else {
+  result.value=p  
+   }
+   
+    } catch (e) {
+      console.log(e)
+      
+    }
+  })
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  </script>
+</body>
+</html>
